@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <StackPane prefHeight="300.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                    <top>
+                        <StackPane prefHeight="30.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <BorderPane prefHeight="47.0" prefWidth="750.0" style="-fx-background-color: #4C4C4C;">
+                                    <left>
+                                        <ImageView fitHeight="30.0" fitWidth="377.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                            <image>
+                                                <Image url="@../images/header-accent-wo-text.png" />
+                                            </image>
+                                        </ImageView>
+                                    </left>
+                                    <right>
+                                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <Pane fx:id="btnMin" onMouseClicked="#handleButtonMinimizeClick" prefHeight="30.0" prefWidth="60.0" styleClass="head-ic-min">
+                                                    <children>
+                                                        <StackPane prefHeight="30.0" prefWidth="65.0">
+                                                            <children>
+                                                                <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../images/ic-minimize.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </children>
+                                                        </StackPane>
+                                                    </children>
+                                                </Pane>
+                                                <Pane fx:id="btnClose" onMouseClicked="#handleButtonCloseClick" prefHeight="30.0" prefWidth="60.0" styleClass="head-ic-close">
+                                                    <children>
+                                                        <StackPane prefHeight="30.0" prefWidth="65.0">
+                                                            <children>
+                                                                <ImageView fitHeight="13.0" fitWidth="13.0" onMouseClicked="#handleButtonCloseClick" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../images/ic-close.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </children>
+                                                        </StackPane>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                            </children>
+                        </StackPane>
+                    </top>
+                    <center>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                    <top>
+                                        <AnchorPane prefHeight="20.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <MenuBar style="-fx-background-color: #4C4C4C; -fx-font-family: &quot;Copperplate Gothic Bold&quot;; -fx-font-size: 14px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <menus>
+                                                        <Menu mnemonicParsing="false" text="Files">
+                                                            <items>
+                                                                <MenuItem fx:id="mnuEvent" mnemonicParsing="false" onAction="#mnuEventClick" text="Events" />
+                                                                <MenuItem fx:id="mnuEventParticipant" mnemonicParsing="false" onAction="#mnuEventParticipantClick" text="Event Participants" />
+                                                                <MenuItem fx:id="mnuEventPerforming" mnemonicParsing="false" onAction="#mnuEventPerformingClick" text="Event Performing" />
+                                                                <MenuItem fx:id="mnuEventCriteria" mnemonicParsing="false" onAction="#mnuEventCriteriaClick" text="Event Criteria" />
+                                                            </items>
+                                                        </Menu>
+                                                        <Menu mnemonicParsing="false" text="Transaction">
+                                             <items>
+                                                <MenuItem fx:id="mnuTabulation" mnemonicParsing="false" onAction="#mnuTabulationClick" text="Tabulation" />
+                                             </items></Menu>
+                                                        <Menu mnemonicParsing="false" text="Reports" />
+                                                    </menus>
+                                                </MenuBar>
+                                    <Separator style="-fx-background-color: orange;" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Separator layoutX="10.0" layoutY="10.0" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </top>
+                                    <center>
+                                        <StackPane fx:id="workingSpace" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <Pane fx:id="view" prefHeight="118.0" prefWidth="750.0" />
+                                            </children>
+                                        </StackPane>
+                                    </center>
+                                </BorderPane>
+                            </children>
+                        </StackPane>
+                    </center>
+                    <bottom>
+                        <StackPane prefHeight="25.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
+                            <children>
+                                <BorderPane prefHeight="25.0">
+                                    <left>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/ic-user.png" />
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets right="5.0" />
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="AppUser" prefHeight="17.0" text="Maynard Valencia - MIS | Rank &amp; File" textFill="#3f3f3f">
+                                                    <font>
+                                                        <Font name="Arial" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <BorderPane.margin>
+                                                <Insets left="18.0" />
+                                            </BorderPane.margin>
+                                        </HBox>
+                                    </left>
+                                    <right>
+                                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/ic-clock.png" />
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets right="4.0" />
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="DateAndTime" text="January 28, 2023 2:38:40 PM">
+                                                    <font>
+                                                        <Font name="Arial" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <BorderPane.margin>
+                                                <Insets right="18.0" />
+                                            </BorderPane.margin>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                            </children>
+                        </StackPane>
+                    </bottom>
+                </BorderPane>
+            </children>
+        </StackPane>
+    </children>
+   <stylesheets>
+      <URL value="@../css/MainPanelStyle.css" />
+      <URL value="@../css/FrameStyle.css" />
+   </stylesheets>
+</AnchorPane>
